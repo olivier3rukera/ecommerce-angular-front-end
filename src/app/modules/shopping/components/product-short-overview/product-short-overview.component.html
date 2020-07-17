@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="space-around stretch" [routerLink]="['/shopping/detail',offer?.uuid]"
+    class="mat-typography offer_overview">
+    <div fxFlex="70%">
+            <img  class="img-fluid" [src]="offer.cover" alt="cover" />
+    </div>
+    <div fxFlex="20%"  fxLayout="column" fxLayoutAlign="space-around center" class="pb-1">
+        <span aria-valuemax="mat-hint">{{offer.name|slice:0:15}}...</span>
+        <span class="mat-body-2">{{offer.price}} FC</span>
+    </div>
+</div>
+<mat-divider></mat-divider>

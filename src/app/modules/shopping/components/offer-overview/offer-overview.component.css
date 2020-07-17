@@ -1,0 +1,19 @@
+.offer_overview{
+    height: 100px;
+    overflow-y: hidden;
+}
+
+.offer_title{
+    text-decoration: none;
+}
+
+.offer_cover_container{
+    width: 100%;
+}
+
+
+.offer_price{
+    font-size: 14px;
+    
+}
+

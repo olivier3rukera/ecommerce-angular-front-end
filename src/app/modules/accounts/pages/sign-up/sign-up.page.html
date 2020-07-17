@@ -1,0 +1,79 @@
+<div class="container bg-white">
+
+  <div>
+    <div>
+      <h1 class="mat-title"> Créez Votre compte</h1>
+    </div>
+    <div>
+      <div fxLayout="column">
+        <form [formGroup]="generalInfoForm">
+          <div fxLayout="column" fxLayoutGap="5vh" fxLayoutAlign="space-around stretch">
+            <div fxLayout="column">
+              <mat-form-field appearance="outline">
+                <mat-label>
+                  Prenom
+                </mat-label>
+                <input matNativeControl formControlName="first_name" required type="text">
+                <mat-error>Quel est votre prenom?</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>
+                  Nom
+                </mat-label>
+                <input matNativeControl formControlName="last_name" required type="text" />
+                <mat-error>Quel est votre nom?</mat-error>
+              </mat-form-field>
+              <mat-divider></mat-divider>
+              <div style="background-color: #f9f9f9;">
+                <h1 class="mat-h2">Vos identifiants</h1>
+
+                <div fxLayout="row" fxLayoutAlign="center center">
+                  <div fxFlex="40px" class="mat-body-2 pb-2" matPrefix fxLayout="row" fxLayoutGap="5px">
+                    +243
+                  </div>
+                  <mat-form-field fxFlex floatLabel="always" appearance="outline">
+
+                    <mat-label>
+                      Numero de telephome
+                    </mat-label>
+                    <input matNativeControl formControlName="username" required type="tel" pattern="[0-9]{9}"
+                      minlength="9" maxlength="9" placeholder="972724502" />
+                    <mat-error>Entrez un numero valide</mat-error>
+                  </mat-form-field>
+                </div>
+
+
+                <div fxLayout="row">
+                  <div fxFlex="40px"></div>
+                  <mat-form-field fxFlex appearance="outline">
+                    <mat-label>
+                      Mot de passe
+                    </mat-label>
+                    <input type="tel" pattern="[0-9]{5}" minlength="5" maxlength="5" required formControlName="password"
+                      matNativeControl />
+                    <mat-error>Le mot de passe doit avoir 5 chiffres</mat-error>
+                    <mat-hint>Entrez un mot de passe de 5 chiffres</mat-hint>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <div class="pt-3" fxLayout="column" fxLayoutAlign="center stretch">
+        <button  type="button" (click)="submit()"
+          [disabled]="generalInfoForm.invalid || loading" class="btn btn-success">
+          Creez mon compte
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div>Vous avez deja un compte? <a mat-button color="primary" [routerLink]="['/account/sign/in']">Connectez vous</a>
+    </div>
+  </div>
+</div>

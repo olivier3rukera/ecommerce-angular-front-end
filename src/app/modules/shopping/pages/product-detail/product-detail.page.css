@@ -1,0 +1,30 @@
+.offer_title {
+    text-align: center;
+}
+
+.offer_price {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.offer_cover_container {
+    width: 100%;
+}
+
+.offer_cover {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+.related_products_container {
+    display: flex;
+    overflow-x: scroll;
+    padding-top: 5px;
+}
+
+.related_product_container{
+    min-width: 200px;
+    max-width: 300px;
+    overflow: hidden;
+}

@@ -1,0 +1,16 @@
+<div [routerLink]="['/shopping/detail',offer?.uuid]"
+    class="mat-typography offer_overview">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxFlex="30%" >
+            <img  class="img-fluid" [src]="offer.cover" alt="cover" />
+        </div>
+
+        <div fxFlex="60%" fxLayout="column" fxLayoutAlign="center strech">
+            <span class="offer_price">{{offer.price | number}} FC</span>
+
+            <span class="offer_title">{{offer.name |slice:0:20 }} <span *ngIf="offer?.title|slice:20">...</span></span>
+
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>

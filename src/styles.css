@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+    background-color: #EEE;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #EEE;
+}
+
+.bg_primary {
+    background-color:#3f51b5;
+    color: white;
+}
+.footer {
+    color:#3f51b5;
+    background-color: #f9f9f9;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.fg_primary{
+    color : 3895D3;
+}
+
+.bg_grey_1 {
+    background-color: #EEE;
+}
+
+.bg_white {
+    background-color: white;
+}
+
+.page {
+    position: relative;
+    top: 0;
+    min-height: 90vh;
+    background-color: #fff;
+    overflow-y: scroll;
+    padding-bottom: 11vh;
+}
+
+.navbar {
+    width: 100%;
+    height: 10vh;
+    background-color: #f9f9f9;
+}
+
+.navbar_container {
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+}
+
+.center_spinner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

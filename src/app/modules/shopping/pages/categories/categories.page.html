@@ -1,0 +1,31 @@
+<div class="mat-typography page container">
+    <h1 class="mat-h2 text-center">Categories</h1>
+    <div class="categories_container">
+
+        <div [routerLink]="['/shopping/filter', {'category': 'Legumes'}]" class="category_container">
+            <strong class="mat-body-1 d-block text-center">Legumes</strong>
+            <div class="category_image_container">
+                <img class="img-fluid" src="/assets/images/legumes.jpeg" alt="">
+            </div>
+        </div>
+        <div [routerLink]="['/shopping/filter', {'category': 'Fruits'}]" class="category_container">
+            <strong class="mat-body-1 d-block text-center">Fruits</strong>
+            <div class="category_image_container">
+                <img class="img-fluid" src="/assets/images/fruits.jpeg" alt="">
+            </div>
+        </div>
+        <div [routerLink]="['/shopping/filter', {'category': 'Epices'}]" class="category_container">
+            <strong class="mat-body-1 d-block text-center">Epices</strong>
+            <div class="category_image_container">
+                <img class="img-fluid" src="/assets/images/epices.jpeg" alt="">
+
+            </div>
+        </div>
+        <div [routerLink]="['/shopping/filter', {'category': 'Viandes'}]" class="category_container">
+            <strong class="mat-body-1 d-block text-center">Viandes</strong>
+            <div class="category_image_container">
+                <img class="img-fluid" src="/assets/images/viandes.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="page">
+
+    <div class="container-fluid" fxLayout="row" fxLayoutAlign="space-around center" class="home_text mb-1">
+
+        <div fxFlex="60%" class="mat-body-2">
+            <strong>Commandez vos produits agricoles en ligne.</strong>
+            <br><strong>
+                Nous delivrons partout à goma.</strong>
+        </div>
+    </div>
+
+    <div class="mat-typography">
+        <h1 class="mat-h2 text-center">Categories</h1>
+        <div class="categories_container">
+
+            <div [routerLink]="['/shopping/filter', {'category': 'Legumes'}]" class="category_container">
+                <h3 class="mat-h3 text-center">Legumes</h3>
+            </div>
+            <div [routerLink]="['/shopping/filter', {'category': 'Fruits'}]" class="category_container">
+                <h3 class="mat-h3 text-center">Fruits</h3>
+            </div>
+            <div [routerLink]="['/shopping/filter', {'category': 'Epices'}]" class="category_container">
+                <h3 class="mat-h3 text-center">Epices</h3>
+
+            </div>
+            <div [routerLink]="['/shopping/filter', {'category': 'Viandes'}]" class="category_container">
+                <h3 class="mat-h3 text-center">Viandes</h3>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="container">
+        <div *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+            <mat-spinner [diameter]="30"></mat-spinner>
+        </div>
+        <div class="group_container">
+            <div class="products_wrapper">
+                <app-product-overview *ngFor="let offer of epices" [offer]="offer">
+                </app-product-overview>
+            </div>
+        </div>
+    </div>
+-->
+
+
+    <div class="container">
+        <div *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+            <mat-spinner [diameter]="30"></mat-spinner>
+        </div>
+        <div *ngIf="!loading">
+            <div class="group_container">
+                <h1 class="mat-h2">Fruits</h1>
+                <div class="products_wrapper_col2">
+                    <app-product-short-overview *ngFor="let offer of fruits|slice :0:4" [offer]="offer">
+                    </app-product-short-overview>
+                </div>
+            </div>
+            <div class="group_container">
+                <h1 class="mat-h2">Legumes</h1>
+                <div>
+                    <app-offer-overview *ngFor="let offer of legumes|slice :0:4" [offer]="offer">
+                    </app-offer-overview>
+
+                </div>
+            </div>
+
+            <div class="group_container">
+                <h1 class="mat-h2">Epices</h1>
+                <div class="products_wrapper_col2">
+                    <app-product-short-overview *ngFor="let offer of epices|slice :0:4" [offer]="offer">
+                    </app-product-short-overview>
+                </div>
+            </div>
+            <!--
+            <div class="group_container">
+                <h1 class="mat-h2">Viandes</h1>
+
+                <div class="row_products_container">
+                    <div class="row_product_container" *ngFor="let offer of viandes|slice :0:4">
+                        <app-product-short-overview [offer]="offer">
+                        </app-product-short-overview>
+                    </div>
+
+                </div>
+
+            </div>
+            -->
+        </div>
+
+
+
+</div>

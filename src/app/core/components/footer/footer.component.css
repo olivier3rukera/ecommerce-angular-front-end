@@ -1,0 +1,8 @@
+.footer{
+    min-height: 7vh;
+    z-index: 999;
+}
+
+.brand_name:focus{
+    outline: none;
+}

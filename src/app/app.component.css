@@ -1,0 +1,24 @@
+.footer_container {
+    height: 7vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.router_outlet_container {
+    
+    background-color: #eee;
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: 7vh;
+}
+
+.button_hint{
+    font-size: 10px;
+}
+
+.nav_button{
+    outline: none;
+}

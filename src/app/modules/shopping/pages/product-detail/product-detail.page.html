@@ -1,0 +1,79 @@
+<div class="page container">
+    <div *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+        <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+    <div *ngIf="offerResolved" fxLayout="column" fxLayoutAlign="space-around strech">
+        
+        <div class="offer_cover_container" fxLayout="row" fxLayoutAlign="center center">
+            <img [src]="offer?.cover" alt="cover" class="offer_cover">
+        </div>
+        <h1 class="mat-h3">{{offer?.name}}</h1>
+        <div fxLayout="row" fxLayoutAlign="start center" class="pb-3">
+            <span class="offer_price">{{offer?.price|number}} FC</span>
+        </div>
+
+        <div *ngIf="!user.isLogged">
+            <div>
+                <div fxLayout="column" fxLayoutAlign="space-around strech">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Quantité</mat-label>
+                        <input matNativeControl type="number" required [formControl]="quantityFormControl">
+                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <button fxFlex="45%" routerLink="/account/sign/in"
+                            [disabled]="loading || quantityFormControl.invalid" (click)="addToCart()" class="btn btn-danger">
+                            Ajouter au panier
+                        </button>
+
+                        <button fxFlex="45%" routerLink="/account/sign/in" class="btn btn-danger">Acheter</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="user.isLogged">
+
+            <div fxLayout="column" fxLayoutAlign="space-around stretch">
+                <mat-form-field appearance="outline">
+                    <mat-label>Quantité</mat-label>
+                    <input matNativeControl type="number" required [formControl]="quantityFormControl">
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <button fxFlex="45%" [disabled]="loading || quantityFormControl.invalid" (click)="addToCart()"
+                    class="btn btn-danger">
+                        Ajouter au panier
+                    </button>
+
+                    <button fxFlex="45%" [routerLink]="['/shopping/payer', {'singleItem': true, 'uuid' : offer.uuid, 'quantity': quantityFormControl.value,
+                't':total}]" [disabled]="loading || quantityFormControl.invalid" class="btn btn-danger">Acheter</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="center_spinner p-2" *ngIf="!relatedResolved">
+                <mat-spinner [diameter]=30></mat-spinner>
+            </div>
+
+            <div *ngIf="relatedResolved" class="pt-2">
+                <h1 class="mat-h1">Produits similaires</h1>
+                <div class="related_products_container">
+                    <div class="related_product_container" *ngFor="let offer of offers">
+                        <app-product-short-overview [offer]="offer">
+                        </app-product-short-overview>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-5">
+            <h1 class="mat-h4">Description du produit</h1>
+            <div>
+                <quill-view [content]="offer.description" format="object"></quill-view>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!loading && !offerResolved">
+        oops! We can not load your page
+    </div>
+</div>

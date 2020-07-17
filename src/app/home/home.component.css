@@ -1,0 +1,18 @@
+.tora_app{
+color: white;
+height: 45vh;
+background-size: cover;
+}
+
+.kop_app{
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/images/kop2.jpg) ;
+}
+
+.event_app{
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(/assets/images/event2.jpg)
+}
+
+
+.service_app{
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(/assets/images/service1.jpg)
+}

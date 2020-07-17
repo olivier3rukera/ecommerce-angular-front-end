@@ -1,0 +1,26 @@
+<div>
+    <h1 class="mat-h1">Votre commande</h1>
+    <div fxLayout="row" fxLayoutAlign="center start">
+        <div fxFlex="60%">Produits</div>
+        <span fxFlex></span>
+        <div fxLayout="30%">
+            Quantite
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="pt-3 pb-2" *ngFor="let product of products">
+        <div fxLayout="row" fxLayout="start center">
+            <div fxLayout="column" fxFlex="60%" fxLayoutAlign="space-around start">
+                <span>{{product.product_name}}</span>
+               <strong> <span>{{product.quantity}} <span class="mat-hint">x</span>  {{product.price}} FC</span></strong>
+            </div>
+            <span fxFlex></span>
+            <div fxFlex="30%" fxLayout="row" fxLayoutAlign="end center">
+                {{product.quantity * product.price}} FC
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+    <h2 class="mat-h2 text-center">Total = {{total}} FC</h2>
+
+</div>

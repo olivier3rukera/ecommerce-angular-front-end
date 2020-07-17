@@ -1,0 +1,36 @@
+<div class="container page">
+    <div fxLayout="row" *ngIf="loading" fxLayoutAlign="center center">
+        <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+    <div *ngIf="!loading && empty">
+        <h1 class="mat-h2 text-center">Votre panier est vide</h1>
+        <div fxLayout="column" fxLayoutAlign="center strecth" >
+            <button class="btn btn-danger" routerLink="/shopping">Poursuivre les achats</button>
+        </div> 
+    </div>
+    <div *ngIf="!loading && !empty">
+        <h1 class="mat-h2">Mes produits</h1>
+        <div *ngFor="let product of products">
+            <app-cart-item (quantityChanged)="onQuantityChanged($event)" [item]="product"></app-cart-item>
+            <mat-divider></mat-divider>
+        </div>
+
+        <div>
+
+        </div>
+        <div class="pt-3 pb-3" fxLayout="row" fxLayoutAlign="end center">
+            <button mat-button color="primary" (click)="updateCart()">Mettre a jour le panier</button>
+        </div>
+
+        <div>
+            <div>
+                <h3 class="mat-h3">Total = {{total}} FC</h3>
+            </div>
+            <div class="pt-3 pb-3" fxLayout="column" fxLayoutAlign="center stretch">
+                <button class="btn danger" [routerLink]="['/shopping/payer', {'t':total}]">Passer la
+                    commande</button>
+            </div>
+        </div>
+    </div>
+
+</div>

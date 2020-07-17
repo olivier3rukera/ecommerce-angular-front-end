@@ -1,0 +1,21 @@
+<div class="page">
+    <div *ngFor="let comment of comments">
+        <div fxLayout="column" [ngClass]="{'sent_message' : comment.author == userService.username, 
+        'received_message':comment.author != userService.username, 'message' : 1 }">
+            <p>{{comment.content}}</p>
+            <span class="date mat-hint">{{comment.sent_at | date:'short'}}</span>
+        </div>
+    </div>
+
+    <div>
+        <div [formGroup]="commentForm" fxLayout="column" fxLayoutAlign="space-around stretch">
+            <mat-form-field appearance="outline">
+                <mat-label>Your message</mat-label>
+                <input type="text" matNativeControl formControlName="content">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="sendComment()"
+                [disabled]="commentForm.invalid">Send</button>
+        </div>
+    </div>
+</div>

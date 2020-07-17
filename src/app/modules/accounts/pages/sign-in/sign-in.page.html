@@ -1,0 +1,54 @@
+<div class="container bg-white" fxLayout="row" fxLayoutAlign="center center">
+  <div *ngIf="loggedIn" style="min-height: 80vh;" fxLayout="column" fxLayoutAlign="space-around stretch">
+    <h1 class="mat-h2"> Bienvenu {{names}}</h1>
+    <button (click)="logout()" class="btn btn-danger btn-block">Se deconnecter</button>
+  </div>
+  <div *ngIf="!loggedIn">
+    <div>
+        <h1 class="mat-h2 text-center">Se connecter</h1>
+          <div fxLayout="column" fxLayoutAlign="space-around stretch">
+            <form [formGroup]="loginForm" (ngSubmit)="submit()">
+              <div fxLayout="column" fxLayoutGap="2vh">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                  <div class="pb-2  mat-body-2" fxFlex="40px">
+                    +243
+                  </div>
+                  <mat-form-field fxFlex appearance="outline">
+                    <mat-label>
+                      Numero de telephome
+                    </mat-label>
+                    <input matNativeControl formControlName="username" required type="tel" pattern="[0-9]{9}"
+                      minlength="9" maxlength="9" placeholder="972724502">
+                    <mat-error>Entrez un numero valide</mat-error>
+                  </mat-form-field>
+
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                  <div fxFlex="40px">
+
+                  </div>
+                  <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>
+                      Mot de passe
+                    </mat-label>
+                    <input type="tel" pattern="[0-9]{5}" minlength="5" maxlength="5" required formControlName="password"
+                      matNativeControl />
+                    <mat-error>Le mot de passe doit avoir 5 chiffres</mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="column">
+                  <button [disabled]="loginForm.invalid || loading" color="primary" mat-raised-button type="submit">
+                    Se connecter
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div>
+              <span>Vous n'avez pas de compte? <a mat-button color="primary"
+                  [routerLink]="['/account/sign/up']">Inscrivez vous</a>
+              </span>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

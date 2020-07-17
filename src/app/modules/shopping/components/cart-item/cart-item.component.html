@@ -1,0 +1,15 @@
+<div fxLayout="row">
+    <div fxFlex="20%" fxLayout="row" fxLayoutAlign="center center">
+        <img class="img-fluid" [src]="item.cover" >
+    </div>
+
+    <div fxFlex="60%" fxLayout="column" fxLayoutAlign="space-around start">
+        <span>{{item.product_name}}</span>
+        <span>{{item.quantity}} X <strong>{{item.unit_price}} FC</strong></span>
+    </div>
+    <mat-form-field fxFlex="20%" appearance="outline">
+        <mat-label>Qte</mat-label>
+        <input type="number" matNativeControl [formControl]="quantityControl" min="0">
+    </mat-form-field>
+
+</div>

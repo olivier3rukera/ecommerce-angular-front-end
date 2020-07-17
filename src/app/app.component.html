@@ -1,0 +1,45 @@
+<div class="footer_container">
+    <app-footer></app-footer>
+</div>
+<div class="router_outlet_container">
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="navbar fixed-bottom">
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <button class="nav_button" routerLink="/shopping" mat-icon-button color="primary">
+                <mat-icon>home</mat-icon>
+            </button>
+            <span class="button_hint">Acceuil</span>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <button class="nav_button" [disabled]="!user.isLogged" routerLink="/shopping/mon-panier" mat-icon-button color="primary">
+                <mat-icon>shopping_cart</mat-icon>
+            </button>
+            <span class="button_hint">Panier</span>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <button class="nav_button" [disabled]="!user.isLogged" mat-icon-button routerLink="/shopping/commandes" color="primary">
+                <mat-icon>bookmark_border</mat-icon>
+            </button>
+            <span class="button_hint">Commandes</span>
+        </div>
+        <!--
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <button class="nav_button" routerLink="/shopping/categories" mat-icon-button color="accent">
+                <mat-icon>bookmark_border</mat-icon>
+            </button>
+            <span class="button_hint">Categories</span>
+        </div>
+        -->
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <button class="nav_button" routerLink="/account/sign/in" mat-icon-button color="primary">
+                <mat-icon>person</mat-icon>
+            </button>
+            <span class="button_hint">Mon compte</span>
+        </div>
+    </div>
+</mat-toolbar>
